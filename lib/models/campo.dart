@@ -38,7 +38,9 @@ class Campo {
     }
 
     if (vizinhancaSegura) {
-      vizinhos.forEach((v) => v.abrir());
+      for (var v in vizinhos) {
+        v.abrir();
+      }
     }
   }
 

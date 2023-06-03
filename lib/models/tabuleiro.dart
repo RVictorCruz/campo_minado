@@ -9,20 +9,27 @@ class Tabuleiro {
 
   final List<Campo> _campos = [];
 
-  Tabuleiro(
-      {required this.linhas, required this.colunas, required this.qtdeBombas}) {
+  Tabuleiro({
+    required this.linhas,
+    required this.colunas,
+    required this.qtdeBombas,
+  }) {
     _criarCampos();
     _relacionarVizinhos();
     _sortearMinas();
   }
 
   void reiniciar() {
-    _campos.forEach((c) => c.reiniciar());
+    for (var c in _campos) {
+      c.reiniciar();
+    }
     _sortearMinas();
   }
 
   void revelarBombas() {
-    _campos.forEach((c) => c.revelarBomba());
+    for (var c in _campos) {
+      c.revelarBomba();
+    }
   }
 
   void _criarCampos() {
